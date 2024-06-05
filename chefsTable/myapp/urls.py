@@ -7,4 +7,7 @@ urlpatterns = [
     path("showform/", views.showform, name="showform"), 
     # re_path(r'^menu_item/([0-9]{2})/$', views.display_menu_item)
     path("home/",views.form_view, name="home"),
+    path("about/", views.about),
+    path('menu_card/',views.menu_by_id),
+    path('index/',views.index)
 ]

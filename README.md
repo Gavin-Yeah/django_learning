@@ -22,3 +22,18 @@
     python3 manage.py makemigration
     python3 manage.py migrate
     ```
+10. create a super user
+    `python3 manage.py createsuperuser`
+
+## add a template html
+1. create a view function, return a render function
+2. add path function in urls file
+3.  add templates dir into template obj
+ 
+
+## add static files
+1. create a static folder in app folder
+2. create a list named STATICFILES_DIRS
+3. add static folder relative path 'myapp/static'
+4. add {% load static %} at the beginning of the HTML file
+5. use the image src="{% static 'img/dessert.jpg' %}"
