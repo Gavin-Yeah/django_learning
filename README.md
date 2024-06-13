@@ -6,11 +6,20 @@
    `pip3 install django`
 4. check django is installed
    `python3 -m django version`
-5. create a django project
-   `django-admin startproject [project_name]`
-6. run the server
+or
+5. insall django in a virtual env
+   `pipenv install django`
+   
+6. activate virtual env
+   `pipenv shell`
+
+
+
+7. create a django project
+   `django-admin startproject [project_name] .`
+8. run the server
    `python3 manage.py runserver`
-7. create an app
+9.  create an app
    `python3 manage.py startapp [app_name]`
    or `python3 -m django startapp [app_name]`
 
@@ -37,3 +46,28 @@
 3. add static folder relative path 'myapp/static'
 4. add {% load static %} at the beginning of the HTML file
 5. use the image src="{% static 'img/dessert.jpg' %}"
+
+## install django rest framework
+1. pip3 install djangorestframework / pipenv install djangorestframework
+2. add 'rest_framework' to INSTALLED_APPS list in settints.py in project folder
+## install django debug toolbar
+1. `pipenv install django-debug-toolbar`
+2. add 'debug_toolbar' in settings.py
+3. add  'debug_toolbar.middleware.DebugToolbarMiddleware' in MIDDLEWARE List
+4. add INTERNAL_IPS = ["127.0.0.1"] in settings.py
+
+
+## set renderer
+1. add in settings.py
+```
+REST_FRAMEWORK = {
+    'DEFAULT_RENDERER_CLASSES':[
+        'rest_framework.renderers.JSONRenderer',
+        'rest_framework.renderers.BrowsableAPIRenderer',
+    ]
+}
+```
+
+## set up xml renderere
+1. `pipenv install djangorestframework-xml`
+2. add   'rest_framework_xml.renderers.XMLRenderer', in   'DEFAULT_RENDERER_CLASSES' list
